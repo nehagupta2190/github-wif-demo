@@ -18,5 +18,11 @@ jobs:
           workload_identity_provider: 'projects/582508909454/locations/global/workloadIdentityPools/wif-pool-github-gcp/providers/github-provider'
           service_account: 'github-wif-test@cms-vpc-control-poc.iam.gserviceaccount.com'
 
+      - name: 'Verify Connection'
+        run: |
+          gcloud auth list
+          gcloud config list
+          echo "Connection is Successful!"    
+
       - name: 'List Buckets'
         run: gcloud storage ls
